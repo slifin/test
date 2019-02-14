@@ -9,7 +9,12 @@
         }
     ],
     "autoload": {
-      "files": ["src/Wheel.php"]
+      "files": [
+        "src/Wheel.php",
+        "src/DateTime.php",
+        "src/Numbers.php",
+        "src/Strings.php"
+      ]
     },
     "require": {},
     "require-dev": {

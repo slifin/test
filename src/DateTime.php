@@ -18,13 +18,13 @@ function increment_datetime(
 ) : \Generator {
 
     $generator = rotatable(
+        $initial,
         function (\DateTimeInterface $datetime) use ($interval) : \DateTimeInterface {
             return date_add(clone $datetime, $interval);
         },
         function (\DateTimeInterface $datetime) use ($reset) : bool {
             return $datetime === $reset;
-        },
-        $initial
+        }
     );
 
     return $generator;

@@ -11,16 +11,16 @@ namespace slifin\wheel;
  *
  * @return \Generator Infinite vector of the given rotation.
  */
-function increment_integer(int $increment, int $reset, int $initial) : \Generator
+function increment_integer(int $increment, int $initial, int $reset) : \Generator
 {
     $generator = rotatable(
+        $initial,
         function (int $i) use ($increment) : int {
             return $i + $increment;
         },
         function (int $i) use ($reset) : bool {
             return $i === $reset;
-        },
-        $initial
+        }
     );
 
     return $generator;
@@ -38,14 +38,14 @@ function increment_integer(int $increment, int $reset, int $initial) : \Generato
 function increment_float(float $increment, float $reset, float $initial) : \Generator
 {
     $generator = rotatable(
+        $initial,
         function (float $i) use ($increment) : float {
             return $i + $increment;
         },
         function (float $i) use ($reset) : bool {
             // Be careful of float comparison here.
             return $i === $reset;
-        },
-        $initial
+        }
     );
 
     return $generator;

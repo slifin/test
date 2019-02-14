@@ -13,13 +13,13 @@ namespace slifin\wheel;
 function increment_string(string $reset, string $initial) : \Generator
 {
     $generator = rotatable(
+        $initial,
         function (string $str) : string {
             return ++$str;
         },
         function (string $str) use ($reset) : bool {
             return $str === $reset;
-        },
-        $initial
+        }
     );
     return $generator;
 }
@@ -36,6 +36,7 @@ function increment_string(string $reset, string $initial) : \Generator
 function increment_custom_string(array $characters, string $reset, string $initial) : \Generator
 {
     $generator = rotatable(
+        $initial,
         function (string $str) use ($characters) : string {
 
             $base = count($characters);
@@ -57,8 +58,7 @@ function increment_custom_string(array $characters, string $reset, string $initi
         },
         function (string $str) use ($reset) : bool {
             return $str === $reset;
-        },
-        $initial
+        }
     );
 
     return $generator;
