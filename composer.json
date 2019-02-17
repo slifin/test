@@ -1,6 +1,6 @@
 {
-    "name": "adriansmith/wheel",
-    "description": "Rotates through a set or rotation for testing",
+    "name": "slifin/test",
+    "description": "Testing functionality",
     "type": "library",
     "authors": [
         {
@@ -11,9 +11,7 @@
     "autoload": {
       "files": [
         "src/Wheel.php",
-        "src/DateTime.php",
-        "src/Numbers.php",
-        "src/Strings.php"
+        "src/Random.php",
       ]
     },
     "require": {},

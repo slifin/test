@@ -11,7 +11,7 @@ namespace slifin\wheel;
  *
  * @return \Generator An infinite vector of the given rotation.
  */
-function rotatable($initial, callable $iterate, callable $reset) : \Generator
+function wheel($initial, callable $iterate, callable $reset) : \Generator
 {
     $i = $initial;
 

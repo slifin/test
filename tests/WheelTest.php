@@ -4,7 +4,7 @@ namespace slifin\wheel;
 
 use PHPUnit\Framework\TestCase;
 
-class NumbersTest extends TestCase
+class WheelTest extends TestCase
 {
     public function setUp() : void
     {
@@ -13,13 +13,21 @@ class NumbersTest extends TestCase
         $this->seed = $seed;
     }
 
-    public function testIncrementIntegerEdges() : void
+    public function testEdges() : void
     {
         $start = mt_rand(0, 100);
         $end = mt_rand($start, mt_rand($start, 100));
         $gap = $end - $start;
 
-        $generator = increment_integer(1, $start, $end);
+        $generator = rotatable(
+            $start,
+            function (int $i) use ($increment) : int {
+                return $i + $increment;
+            },
+            function (int $i) use ($end) : bool {
+                return $i === $end;
+            }
+        );
 
         $this->assertTrue(
             $generator->current() === $start,
