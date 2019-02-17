@@ -1,9 +1,24 @@
 # Test
-## Random
+Randomiser functions and wheels to create unique values.
+
+## Random
 
 ### Integer
+```php
+\slifin\random\integer( void ) : int
+\slifin\random\integer( int $min , int $max ) : int
+```
+
+An alias of mt_rand for creating random integers within a range.
 ### String
+```php
+\slifin\random\string( array $alphabet, int $length ) : string
+```
+
 ### DateTime
+```php
+\slifin\random\datetime( \DateTime $start, \DateInterval $interval, int $max ) : \DateTime
+```
 
 ## Wheels
 
@@ -18,7 +33,7 @@ A wheel is created by
   - a way to rotate to the next value
   - a ending condition
 
-Examples
+### Examples
 
 ### Increment Integer
 ```php
@@ -131,7 +146,7 @@ If your range has less than two values in it, the wheel will not warn you, it's 
  * @return \Generator An infinite set of the given rotation.
  */
 function datetime_wheel(
-    \DateTime $start
+    \DateTime $start,
     \DateInterval $interval,
     \DateTime $end,
 ) : \Generator {
