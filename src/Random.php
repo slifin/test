@@ -23,7 +23,8 @@ function datetime(
 
     $rand = mt_rand(0, $max);
 
-    return date_add(clone $start,
+    return date_add(
+        clone $start,
         new \DateInterval(
             sprintf(
                 'P%dY%dM%dDT%dH%dM%dS',
