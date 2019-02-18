@@ -2,24 +2,30 @@
 
 namespace slifin\test\wheel;
 
-/**
- * Rotates over a set from a given position.
- *
- * @param mixed $initial The first value to rotate on.
- * @param callable $iterate How to move the wheel forward.
- * @param callable $reset The conditions under which the wheel resets.
- *
- * @return \Generator An infinite vector of the given rotation.
- */
-function wheel($initial, callable $iterate, callable $reset) : \Generator
+function rotatable(callable $iterate) : \Closure
 {
-    $i = $initial;
+    return function ($start, $initial, $end) use ($iterate) : \Generator {
 
+        $i = $initial;
+        while (true) {
+            yield $i;
+            $i === $end
+                and $i = $start;
+
+            if ($i === $initial) {
+                return;
+            }
+            $i = $iterate($i);
+        }
+    };
+}
+
+function infinity(callable $generator) : \Generator
+{
     while (true) {
-        yield $i;
-        $i = $reset($i)
-            ? $initial
-            : $iterate($i);
+        foreach ($generator() as $value) {
+            yield $value;
+        }
     }
 }
 

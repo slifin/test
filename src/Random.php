@@ -2,6 +2,8 @@
 
 namespace slifin\test\random;
 
+use function \mt_rand as integer;
+
 /**
  * test
  *

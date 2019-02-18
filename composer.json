@@ -10,8 +10,9 @@
     ],
     "autoload": {
       "files": [
-        "src/Wheel.php",
-        "src/Random.php"
+        "src/Incrementer.php",
+        "src/Random.php",
+        "src/Wheel.php"
       ]
     },
     "require": {},
