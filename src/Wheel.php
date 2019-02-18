@@ -1,6 +1,6 @@
 <?php
 
-namespace slifin\wheel;
+namespace slifin\test\wheel;
 
 /**
  * Rotates over a set from a given position.

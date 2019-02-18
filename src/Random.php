@@ -1,9 +1,13 @@
 <?php
 
-namespace slifin\random;
+namespace slifin\test\random;
 
-use function \mt_rand as integer;
-
+/**
+ * test
+ *
+ * @param array $alphabet The start
+ * @param int $length The interval
+ */
 function string(array $alphabet, int $length) : string
 {
     return preg_replace_callback(
@@ -15,6 +19,15 @@ function string(array $alphabet, int $length) : string
     );
 }
 
+/**
+ * Get a random DateTime between boundaries of given interval.
+ *
+ * @param \DateTime $start The start
+ * @param \DateInterval $interval The interval
+ * @param integer $max The maximum gap we'll pick from
+ *
+ * @return \DateTime Random \DateTime.
+ */
 function datetime(
     \DateTime $start,
     \DateInterval $interval,
