@@ -22,6 +22,9 @@ class WheelTest extends TestCase
             '\slifin\test\incrementer\boolean'
         );
 
+        // Sometimes iterating twice here will
+        // mean we move outside our original rotation
+        // so let's make infinite rotations.
         $generator =
             \slifin\test\wheel\infinity($rotator, true, true, $end);
 
