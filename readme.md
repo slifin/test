@@ -1,12 +1,19 @@
 # Test
 A testing library for generative testing
 
-Namespace: ```\slifin\test\*```
+Namespace: 
+
+```php
+\slifin\test\*
+```
 
 ## Randomizers
 
 ### Boolean
-
+```php
+random\boolean() : bool
+```
+Returns true or false
 ### Integer
 ```php
 random\integer( int $min , int $max ) : int
@@ -22,9 +29,12 @@ random\string( array $alphabet, int $length ) : string
 ```php
 random\datetime( \DateTime $start, \DateInterval $interval, int $max ) : \DateTime
 ```
-## Incrementers
+## Incrementers
 
 ### Boolean
+```php
+incrementer\boolean( bool $bool ) : bool
+```
 ### Integer
 ### String
 ### DateTime
@@ -45,8 +55,9 @@ A wheel is created by
   - a ending boundary
 
 
-### rotatable
 
-### infinity
+### Rotatable
 
-### rotate
+### Infinity
+
+### Rotate
