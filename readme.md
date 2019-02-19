@@ -18,8 +18,7 @@ Returns true or false
 ```php
 random\integer( int $min , int $max ) : int
 ```
-
-An alias of mt_rand for creating random integers within a range.
+Returns a random integer inclusive of the min and max boundaries
 ### String
 ```php
 random\string( array $alphabet, int $length ) : string
