@@ -27,6 +27,7 @@ function rotatable(callable $iterate) : \Closure
  * Take a function that returns an iterable, make it loop forever.
  *
  * @param callable $generator The generator|iterable creator function.
+ * @param ... $args The arguments the callable may require
  *
  * @return \Generator An infinite generator
  */
