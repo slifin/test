@@ -30,7 +30,7 @@ Returns a random string given characters from a custom alphabet
 ```php
 random\datetime( \DateTime $start , \DateInterval $interval , int $max ) : \DateTime
 ```
-Returns a random ```\DateTime``` object between two boundaries with a given interval
+Returns a random ```\DateTime``` object between ```$start``` and ```$max``` many ```$intervals``` in the future
 ### Incrementers
 
 #### Boolean
