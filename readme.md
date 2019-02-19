@@ -1,6 +1,11 @@
 # slifin\test
 _A testing library for generative testing_
 
+Version: 
+```php
+0.1.0
+```
+
 Namespace:
 
 ```php
@@ -37,7 +42,12 @@ Returns a random ```\DateTime``` object between ```$start``` and ```$max``` many
 ```php
 incrementer\boolean( bool $bool ) : bool
 ```
+Returns the opposite boolean to ```$bool```
 #### Integer
+```php
+incrementer\integer( int $increment ) : \Closure
+```
+Returns a function that will increment its input by ```$increment```
 #### String
 #### DateTime
 
