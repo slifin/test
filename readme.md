@@ -7,6 +7,8 @@ Namespace:
 \slifin\test\*
 ```
 
+# API Reference
+
 ## Randomizers
 
 ### Boolean
