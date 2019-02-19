@@ -9,34 +9,32 @@ class WheelTest extends TestCase
     public function setUp() : void
     {
         $seed = mt_rand();
-        $seed = 992270795;
         mt_srand($seed);
         $this->seed = $seed;
     }
 
     public function testEdges() : void
     {
-        $initial = mt_rand(0, 100);
-        $end = mt_rand($initial, mt_rand($initial, 100));
-        $gap = $end - $initial;
+        $start = true;
+        $end = \slifin\test\random\boolean();
 
-        $generator = \slifin\test\wheel\rotatable(
-            \slifin\test\incrementer\integer(1)
-        )(0, $initial, $end);
-
-        $this->assertTrue(
-            $generator->current() === $initial,
-            "Starting edge not as expected, seed: $this->seed"
+        $rotator = \slifin\test\wheel\rotatable(
+            '\slifin\test\incrementer\boolean'
         );
 
-        for ($i = 0; $i < $gap; $i++) {
-            $out = \slifin\test\wheel\rotate($generator);
-            var_dump($out);
-        }
+        $generator =
+            \slifin\test\wheel\infinity($rotator, true, true, $end);
+
+        $this->assertTrue(
+            $generator->current() === $start,
+            "Starting edge not as expected ($start), seed: $this->seed"
+        );
+
+        $out = \slifin\test\wheel\rotate($generator);
 
         $this->assertTrue(
             $generator->current() === $end,
-            "Ending edge not as expected, seed: $this->seed"
+            "Ending edge not as expected ($end), seed: $this->seed"
         );
     }
 }

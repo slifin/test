@@ -3,6 +3,16 @@
 namespace slifin\test\random;
 
 /**
+ * Creates a random boolean
+ *
+ * @return bool true or false
+ */
+function boolean() : bool
+{
+    return (bool) mt_rand(0, 1);
+}
+
+/**
  * Creates a random integer between two integers
  *
  * @param int $min Minimum boundary for random generation

@@ -14,16 +14,12 @@ function rotatable(callable $iterate) : \Closure
     return function ($start, $initial, $end) use ($iterate) : \Generator {
 
         $i = $initial;
-        while (true) {
+        do {
             yield $i;
-            $i === $end
-                and $i = $start;
-
-            if ($i === $initial) {
-                return;
-            }
-            $i = $iterate($i);
-        }
+            $i = $i === $end
+                ? $i = $start
+                : $iterate($i);
+        } while ($i !== $initial);
     };
 }
 
@@ -34,10 +30,10 @@ function rotatable(callable $iterate) : \Closure
  *
  * @return \Generator An infinite generator
  */
-function infinity(callable $generator) : \Generator
+function infinity(callable $generator, ...$args) : \Generator
 {
     while (true) {
-        foreach ($generator() as $value) {
+        foreach ($generator(...$args) as $value) {
             yield $value;
         }
     }

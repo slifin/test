@@ -3,6 +3,16 @@
 namespace slifin\test\incrementer;
 
 /**
+ * How to move boolean forward
+ *
+ * @return bool opposite of given boolean
+ */
+function boolean(bool $bool) : bool
+{
+    return !$bool;
+}
+
+/**
  * How to move integer forward
  *
  * @param integer $increment The increment number
