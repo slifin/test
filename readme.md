@@ -1,5 +1,5 @@
 # slifin\test
-A testing library for generative testing
+_A testing library for generative testing_
 
 Namespace:
 
