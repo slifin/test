@@ -27,7 +27,7 @@ function integer(int $increment) : \Closure
 }
 
 /**
- * How to move string forward
+ * How to increment given string forward
  *
  * @param array $alphabet An array of unique characters
  *

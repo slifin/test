@@ -1,7 +1,7 @@
 # Test
 A testing library for generative testing
 
-Namespace: ```\slifin\test\*```
+Namespace: ```php \slifin\test\```
 
 ## Randomizers
 
