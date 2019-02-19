@@ -2,13 +2,23 @@
 
 namespace slifin\test\random;
 
+/**
+ * Creates a random integer between two integers.
+ *
+ * @param int $min Minimum boundary for random generation
+ * @param int $max Maximum boundary for random generation
+ *
+ * @return int A randomised int between boundaries.
+ */
 use function \mt_rand as integer;
 
 /**
- * test
+ * Creates a random string of a given length + alphabet.
  *
- * @param array $alphabet The start
- * @param int $length The interval
+ * @param array $alphabet A collection of unique characters.
+ * @param string $length How long the return string should be.
+ *
+ * @return string A randomised string from the set of chars.
  */
 function string(array $alphabet, int $length) : string
 {
@@ -26,7 +36,7 @@ function string(array $alphabet, int $length) : string
  *
  * @param \DateTime $start The start
  * @param \DateInterval $interval The interval
- * @param integer $max The maximum gap we'll pick from
+ * @param integer $max The maximum number of occurrences
  *
  * @return \DateTime Random \DateTime.
  */
