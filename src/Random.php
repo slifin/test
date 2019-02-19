@@ -3,22 +3,22 @@
 namespace slifin\test\random;
 
 /**
- * Creates a random integer between two integers.
+ * Creates a random integer between two integers
  *
  * @param int $min Minimum boundary for random generation
  * @param int $max Maximum boundary for random generation
  *
- * @return int A randomised int between boundaries.
+ * @return int A randomised int between boundaries
  */
 use function \mt_rand as integer;
 
 /**
- * Creates a random string of a given length + alphabet.
+ * Creates a random string of a given length + alphabet
  *
- * @param array $alphabet A collection of unique characters.
- * @param string $length How long the return string should be.
+ * @param array $alphabet A collection of unique characters
+ * @param string $length How long the return string should be
  *
- * @return string A randomised string from the set of chars.
+ * @return string A randomised string from the set of chars
  */
 function string(array $alphabet, int $length) : string
 {
@@ -32,13 +32,13 @@ function string(array $alphabet, int $length) : string
 }
 
 /**
- * Get a random DateTime between boundaries of given interval.
+ * Get a random DateTime between boundaries of given interval
  *
  * @param \DateTime $start The start
  * @param \DateInterval $interval The interval
  * @param integer $max The maximum number of occurrences
  *
- * @return \DateTime Random \DateTime.
+ * @return \DateTime Random \DateTime
  */
 function datetime(
     \DateTime $start,

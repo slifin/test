@@ -2,6 +2,13 @@
 
 namespace slifin\test\incrementer;
 
+/**
+ * How to move integer forward
+ *
+ * @param integer $increment The increment number
+ *
+ * @return \Closure A function that will move the number forward
+ */
 function integer(int $increment) : \Closure
 {
     return function (int $i) use ($increment) : int {
@@ -9,6 +16,13 @@ function integer(int $increment) : \Closure
     };
 }
 
+/**
+ * How to move string forward
+ *
+ * @param array $alphabet An array of unique characters
+ *
+ * @return \Closure A function that will move a string forward
+ */
 function string(array $alphabet) : \Closure
 {
     return function (string $string) : string {
@@ -26,6 +40,13 @@ function string(array $alphabet) : \Closure
     };
 }
 
+/**
+ * How to move a datetime object forward by interval
+ *
+ * @param \DateInterval $interval The interval
+ *
+ * @return \Closure Function that moves a datetime forward
+ */
 function datetime(\DateInterval $interval) : \Closure
 {
     return function (\DateTime $datetime) use ($interval) : \DateTime {
