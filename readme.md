@@ -21,12 +21,12 @@ random\integer( int $min , int $max ) : int
 Returns a random integer inclusive of the min and max boundaries
 ### String
 ```php
-random\string( array $alphabet, int $length ) : string
+random\string( array $alphabet , int $length ) : string
 ```
 
 ### DateTime
 ```php
-random\datetime( \DateTime $start, \DateInterval $interval, int $max ) : \DateTime
+random\datetime( \DateTime $start , \DateInterval $interval , int $max ) : \DateTime
 ```
 ## Incrementers
 
