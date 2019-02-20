@@ -75,7 +75,7 @@ wheel\rotatable( callable $iterate ) : \Closure
 ```
 Returns:
 ```php 
-function ( mixed $start , mixed $initial , mixed $end ) : \Generator
+function ( mixed $start , mixed $initial , mixed $end ) use ( $iterate ) : \Generator
 ```
 - Start the value of the beginning of a rotation
 - Initial the value is where the \Generator's iteration will begin
