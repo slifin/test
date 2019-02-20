@@ -35,7 +35,7 @@ function integer(int $increment) : \Closure
  */
 function string(array $alphabet) : \Closure
 {
-    return function (string $string) : string {
+    return function (string $string) use ($alphabet) : string {
 
         $numbers = array_keys($alphabet);
         $numeric = str_replace($alphabet, $numbers, $string);
