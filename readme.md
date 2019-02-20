@@ -73,7 +73,7 @@ Returns a function that will increment its input by the given ```$interval```
 
 ### Wheels
 
-### Rotatable
+#### Rotatable
 ```php
 wheel\rotatable( callable $iterate ) : \Closure
 ```
@@ -86,12 +86,12 @@ function ( mixed $start , mixed $initial , mixed $end ) use ( $iterate ) : \Gene
 - End describe the end of a rotation
 
 The returned generator will iterate from **initial** up to **end**, reset to **start** then terminate at **initial**
-### Infinity
+#### Infinity
 ```php
 wheel\infinity( callable $generator , ...$args ) : \Generator
 ```
 Returns an infinite generator given a function that can return an iterable
-### Rotate
+#### Rotate
 ```php
 wheel\rotate(\Generator $generator) : mixed
 ```
