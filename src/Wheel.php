@@ -17,7 +17,7 @@ function rotatable(callable $iterate) : \Closure
         do {
             yield $i;
             $i = $i === $end
-                ? $i = $start
+                ? $start
                 : $iterate($i);
         } while ($i !== $initial);
     };
