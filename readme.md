@@ -47,10 +47,18 @@ Returns the opposite boolean to ```$bool```
 ```php
 incrementer\integer( int $increment ) : \Closure
 ```
-Returns a function that will increment its input by ```$increment```
+Returns:
+```php
+function ( int $i ) use ( $increment ) : int
+```
+Returns a function that will increment its input ```$i``` by ```$increment```
 #### String
 ```php
 incrementer\string( array $alphabet ) : \Closure
+```
+Returns:
+```php
+function ( string $string ) use ( $alphabet ) : string
 ```
 Returns a function that will increment its input by the given ```$alphabet```
 #### DateTime
