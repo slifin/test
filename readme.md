@@ -65,6 +65,10 @@ Returns a function that will increment its input by the given ```$alphabet```
 ```php
 incrementer\DateTime( \DateInterval $interval ) : \Closure
 ```
+Returns:
+```php
+function ( \DateTime $datetime ) use ( $interval ) : \DateTime
+```
 Returns a function that will increment its input by the given ```$interval```
 
 ### Wheels
