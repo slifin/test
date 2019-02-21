@@ -5,27 +5,28 @@ namespace slifin\test;
 use Nette\PhpGenerator\ClassType;
 
 function phpunit(
+    string $namespace,
     string $class,
-    array ...$methods
+    string ...$methods
 ) : ClassType {
 
     $class =
-        new ClassType(
-            $class . 'Test'
-        );
+        new ClassType($class . 'Test');
 
     $class->setExtends(
-        'PHPUnit\Framework\TestCase'
+        '\PHPUnit\Framework\TestCase'
     );
 
     foreach ($methods as $method) {
         $class
             ->addMethod(
-                'test' . $method['name']
+                'test_' . $method
             )
             ->setBody(
                 'return '
-                    . $method['function']
+                    . $namespace
+                    . '\\'
+                    . $method
                     . '($this);'
             );
     }
