@@ -1,7 +1,7 @@
 # slifin\test
 _A testing library for generative testing_
 
-Version: 
+Version:
 ```php
 0.1.0
 ```
@@ -75,11 +75,11 @@ Returns a function that will increment its input by the given ```$interval```
 
 #### Rotatable
 ```php
-wheel\rotatable( callable $iterate ) : \Closure
+wheel\rotatable( callable $increment ) : \Closure
 ```
 Returns:
-```php 
-function ( mixed $start , mixed $initial , mixed $end ) use ( $iterate ) : \Generator
+```php
+function ( mixed $start , mixed $initial , mixed $end ) use ( $increment ) : \Generator
 ```
 - Start the value of the beginning of a rotation
 - Initial the value is where the \Generator's iteration will begin
