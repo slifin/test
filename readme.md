@@ -12,6 +12,9 @@ Namespace:
 \slifin\test\*
 ```
 
+## Examples
+(currently missing)
+
 ## API Reference
 
 ### Randomizers
@@ -96,3 +99,10 @@ Returns an infinite generator given a function that can return an iterable
 wheel\rotate(\Generator $generator) : mixed
 ```
 Returns the current value of a given generator and moves the iterator forward
+
+#### Union
+```php
+wheel\union ( array ...$generators ) : \Generator
+```
+Given an multi demensional array of 'function' & 'args' keys create a generator
+that is the combination of all the given generator functions

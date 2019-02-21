@@ -54,6 +54,13 @@ function rotate(\Generator $generator)
     return $current;
 }
 
+/**
+ * Given a set of generator functions create a union of all generators
+ *
+ * @param \Generator $generators The generators to combine
+ *
+ * @return \Generator The combined generator
+ */
 function union(array ...$generators) : \Generator
 {
     foreach ($generators as $gen) {
