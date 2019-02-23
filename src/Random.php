@@ -9,7 +9,7 @@ namespace slifin\test\random;
  */
 function boolean() : bool
 {
-    return (bool) \random_int(0, 1);
+    return (bool) \mt_rand(0, 1);
 }
 
 /**
@@ -20,7 +20,7 @@ function boolean() : bool
  *
  * @return int A randomised int between boundaries
  */
-use function \random_int as integer;
+use function \mt_rand as integer;
 
 /**
  * Creates a random string of a given length + alphabet
@@ -35,7 +35,7 @@ function string(array $alphabet, int $length) : string
     return preg_replace_callback(
         '/./',
         function (int $in) use ($alphabet) : string {
-            return $alphabet[\random_int($in, count($alphabet) - 1)];
+            return $alphabet[\mt_rand($in, count($alphabet) - 1)];
         },
         str_repeat('0', $length)
     );
@@ -56,7 +56,7 @@ function datetime(
     int $max
 ) : \DateTime {
 
-    $rand = \random_int(0, $max);
+    $rand = \mt_rand(0, $max);
 
     return date_add(
         clone $start,
