@@ -20,7 +20,10 @@ function boolean() : bool
  *
  * @return int A randomised int between boundaries
  */
-use function \mt_rand as integer;
+function integer(int $min, int $max) : int
+{
+    return \mt_rand($min, $max);
+}
 
 /**
  * Creates a random string of a given length + alphabet
