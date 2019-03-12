@@ -96,7 +96,7 @@ wheel\infinity( callable $generator , ...$args ) : \Generator
 Returns an infinite generator given a function that can return an iterable
 #### Rotate
 ```php
-wheel\rotate(\Generator $generator) : mixed
+wheel\rotate( \Generator $generator ) : mixed
 ```
 Returns the current value of a given generator and moves the iterator forward
 
