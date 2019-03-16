@@ -36,9 +36,9 @@ random\string( array $alphabet , int $length ) : string
 Returns a random string given characters from a custom alphabet
 #### DateTime
 ```php
-random\datetime( \DateTime $start , \DateInterval $interval , int $max ) : \DateTime
+random\datetime( \DateTime $start , \DateInterval $interval , \DateTime $end ) : \DateTime
 ```
-Returns a random ```\DateTime``` object between ```$start``` and ```$max``` many ```$intervals``` in the future
+Returns a random ```\DateTime``` object between ```$start``` and ```$end``` in successions of ```$interval```
 ### Incrementers
 
 #### Boolean
