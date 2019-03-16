@@ -47,20 +47,33 @@ function string(array $alphabet, int $length) : string
 /**
  * Get a random DateTime between boundaries of given interval
  *
- * @param \DateTime $start The start
+ * @param \DateTime $start The start of the boundary
  * @param \DateInterval $interval The interval
- * @param integer $max The maximum number of occurrences
+ * @param \DateTime $end The end of the boundary
  *
  * @return \DateTime Random \DateTime
  */
 function datetime(
     \DateTime $start,
     \DateInterval $interval,
-    int $max
+    \DateTime $end
 ) : \DateTime {
-
-    $rand = \mt_rand(0, $max);
-
+    
+    $type_of_times = 
+        array_filter((array) $interval);
+        
+    [$type] = 
+        array_keys($type_of_times);
+            
+    $diff = 
+        \date_interval_format(
+            date_diff($start, $end),
+            '%' . $type
+        );
+    
+    $rand = 
+        \mt_rand(0, $diff);
+        
     return date_add(
         clone $start,
         new \DateInterval(
