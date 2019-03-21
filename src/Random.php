@@ -58,22 +58,26 @@ function datetime(
     \DateInterval $interval,
     \DateTime $end
 ) : \DateTime {
-    
-    $type_of_times = 
+
+    $type_of_times =
         array_filter((array) $interval);
-        
-    [$type] = 
+
+    [$type] =
         array_keys($type_of_times);
-            
-    $diff = 
+
+    // Count total days not relative days.
+    $type === 'd'
+        and $type = 'a';
+
+    $diff =
         \date_interval_format(
             date_diff($start, $end),
             '%' . $type
         );
-    
-    $rand = 
+
+    $rand =
         \mt_rand(0, $diff);
-        
+
     return date_add(
         clone $start,
         new \DateInterval(
