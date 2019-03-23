@@ -45,7 +45,7 @@ function string(array $alphabet, int $length) : string
 }
 
 /**
- * Get a random DateTime between boundaries of given interval
+ * Get a random DateTime between boundaries with given interval
  *
  * @param \DateTime $start The start of the boundary
  * @param \DateInterval $interval The interval

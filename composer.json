@@ -12,10 +12,12 @@
       "files": [
         "src/Incrementer.php",
         "src/Random.php",
-        "src/Wheel.php"
+        "src/Wheel.php",
+        "src/Sequencer.php"
       ]
     },
     "require": {
+        "mtdowling/transducers": "^0.3.0"
     },
     "require-dev": {
     }
