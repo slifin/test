@@ -10,10 +10,10 @@
     ],
     "autoload": {
       "files": [
-        "src/Incrementer.php",
-        "src/Random.php",
-        "src/Wheel.php",
-        "src/Sequencer.php"
+        "src/incrementer.php",
+        "src/random.php",
+        "src/sequencer.php",
+        "src/transducers.php"
       ]
     },
     "require": {
