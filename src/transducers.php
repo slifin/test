@@ -26,3 +26,24 @@ function unique() : \Closure
         ];
     };
 }
+
+/**
+ * A transducer to filter values by probability.
+ *
+ * @return \Closure Function that returns a transducer.
+ */
+function random_sample(float $prob) : \Closure
+{
+    return function (array $xf) use ($prob) : array {
+        return [
+            'init'   => $xf['init'],
+            'result' => $xf['result'],
+            'step'   => function ($result, $input) use ($prob, $xf) {
+
+                return (mt_rand() / mt_getrandmax()) < $prob
+                    ? $xf['step']($result, $input)
+                    : $result;
+            },
+        ];
+    };
+}
