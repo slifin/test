@@ -1,6 +1,6 @@
 <?php
 
-namespace slifin\test\incrementer;
+namespace slifin\incrementer;
 
 /**
  * How to move boolean forward

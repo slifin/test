@@ -1,6 +1,6 @@
 <?php
 
-namespace slifin\test\random;
+namespace slifin\random;
 
 /**
  * Creates a random boolean
