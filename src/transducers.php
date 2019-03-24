@@ -1,6 +1,6 @@
 <?php
 
-namespace slifin\test\transducers;
+namespace Transducers;
 
 /**
  * A transducer to retrieve unique values.
