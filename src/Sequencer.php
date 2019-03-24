@@ -1,6 +1,6 @@
 <?php
 
-namespace slifin\test\sequencer;
+namespace slifin\sequencer;
 
 /**
  * Defines a repeatable pattern for testing.
