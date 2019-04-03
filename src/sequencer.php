@@ -11,7 +11,7 @@ namespace slifin;
  */
 function sequencer(callable $amplitude) : \Closure
 {
-    return function ($value = null, int $key = 0) use ($amplitude) : \Generator {
+    return function ($value = null, int $key = -1) use ($amplitude) : \Generator {
         do {
             yield $value ?? $amplitude(null, ++$key);
             $value = $amplitude($value, ++$key);
