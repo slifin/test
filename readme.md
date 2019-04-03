@@ -67,36 +67,3 @@ Returns:
 function ( \DateTime $datetime ) use ( $interval ) : \DateTime
 ```
 Returns a function that will increment its input by the given ```$interval```
-
-### Wheels
-
-#### Rotatable
-```php
-wheel\rotatable( callable $increment ) : \Closure
-```
-Returns:
-```php
-function ( mixed $start , mixed $initial , mixed $end ) use ( $increment ) : \Generator
-```
-- Start the value of the beginning of a rotation
-- Initial the value is where the \Generator's iteration will begin
-- End describe the end of a rotation
-
-The returned generator will iterate from **initial** up to **end**, reset to **start** then terminate at **initial**
-#### Infinity
-```php
-wheel\infinity( callable $generator , ...$args ) : \Generator
-```
-Returns an infinite generator given a function that can return an iterable
-#### Rotate
-```php
-wheel\rotate( \Generator $generator ) : mixed
-```
-Returns the current value of a given generator and moves the iterator forward
-
-#### Union
-```php
-wheel\union ( array ...$generators ) : \Generator
-```
-Given an multi demensional array of 'function' & 'args' keys create a generator
-that is the combination of all the given generator functions
