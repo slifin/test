@@ -7,16 +7,19 @@ namespace transducers;
  *
  * @return \Closure Function that returns a transducer.
  */
-function unique() : \Closure
+function unique(callable $accessor = null) : \Closure
 {
-    return function (array $xf) : array {
+    $accessor =
+        $accessor ?? 'transducers\identity';
+
+    return function (array $xf) use ($accessor) : array {
         $outer = [];
         return [
             'init' => $xf['init'],
             'result' => $xf['result'],
-            'step' => function ($result, $input) use ($xf, &$outer) {
+            'step' => function ($result, $input) use ($xf, &$outer, $accessor) {
 
-                if (!in_array($input, $outer)) {
+                if (!in_array($accessor($input), $outer)) {
                     $outer[] = $input;
                     return $xf['step']($result, $input);
                 }
