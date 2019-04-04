@@ -1,6 +1,6 @@
 <?php
 
-namespace Transducers;
+namespace transducers;
 
 /**
  * A transducer to retrieve unique values.

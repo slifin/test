@@ -10,6 +10,7 @@
     ],
     "autoload": {
       "files": [
+        "src/accessors.php",
         "src/incrementer.php",
         "src/random.php",
         "src/sequencer.php",
