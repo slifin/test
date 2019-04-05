@@ -31,6 +31,29 @@ function unique(callable $accessor = null) : \Closure
 }
 
 /**
+ * A transducer to emit side effects.
+ *
+ * @param callable $f Walk function to apply.
+ *
+ * @return \Closure Function that returns a transducer.
+ */
+function walk(callable $f) : \Closure
+{
+    return function (array $xf) use ($f) : array {
+        return [
+            'init' => $xf['init'],
+            'result' => $xf['result'],
+            'step' => function ($result, $input) use ($xf, $f) {
+
+                $f($input);
+
+                return $xf['step']($result, $input);
+            },
+        ];
+    };
+}
+
+/**
  * A transducer to filter values by probability.
  *
  * @return \Closure Function that returns a transducer.
